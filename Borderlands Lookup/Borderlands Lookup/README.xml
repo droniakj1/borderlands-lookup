@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<comments>
+  <purpose>
+    The purpose of this document is to give a short description of this program and its current state. At the moment this program is not working.
+  </purpose>
+  <creation_date>December 27, 2013</creation_date>
+  Unfortunately I was not able to implement many of the features that I had intended to, so some parts of this program are not working.
+  This program was created a few years ago and I have not updated it since. It took me about two weeks to get to a working, usable state.
+  The main issue with this program is that there was no API for interacting with the Borderlands Wiki, which made the results unreliable.
+  When this did work, it worked most of the time and it would sometimes return a random string of HYML when something useful was expected.
+  This was mainly due to the fact that the program works based on sending requests for entire pages to the Wiki. Essentially it builds a path
+  to the specific webpage that the user is looking for on the Wiki and parses out the data that the user is interested in from the Wiki.
+  Admittedly this is not the best approach, but an API was not available at the time this was created so making JSON or XML requests was
+  out of the question unfortunately. 
+  It shouldn't be too hard to fix this up, and if there were a cleaner, more reliable way of getting data from the Wiki then I would love to do
+  that. But like I said, there is no API that I know of that can get the required data for this program.
+  One of the primary functions for this program was to grab the data on the "legendary" items in the game since they were always unique.
+  So to speed this up, the program actually starts by grabbing the page that lists all of the legendary items in both Borderlands 1 and 2
+  and populates an array of BorderlandsItem objects (after navigating to the item's page and grabbing the necessary data) so that instead of having 
+  to send a request to the Wiki every time the user wants to get data on a legendary item, it is all stored locally in this array for quick access. 
+  Most often I found myself looking up legendary items, sothat's why this feature was added.
+  I'm actually somewhat pround of my interface design on this one. It may not be the prettiest design, but I like it. So in order to give you a good
+  look at it, I have commented out a line that is causing the program to not work.
+  Also, you may do whatever you like with the source code.
+</comments>

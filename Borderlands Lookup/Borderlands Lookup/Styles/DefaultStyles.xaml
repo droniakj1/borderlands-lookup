@@ -1,0 +1,193 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush Color="#E78220" x:Key="DefaultBorderBrush" />
+    <SolidColorBrush Color="#FCA34D" x:Key="DefaultForegroundBrush" />
+    <SolidColorBrush Color="#45423F" x:Key="MainBackgroundBrush" />
+    <Style TargetType="{x:Type Grid}" x:Key="HeaderGridStyle">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.491453,1.94556" EndPoint="2.74146,1.94556">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <SkewTransform CenterX="0.491453" CenterY="1.94556" AngleX="1.62095" AngleY="0"/>
+                            <RotateTransform CenterX="0.491453" CenterY="1.94556" Angle="269.876"/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF000000" Offset="0.513915"/>
+                        <GradientStop Color="#FF656565" Offset="1"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="CloseButtonStyle">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.428947,1.4321" EndPoint="0.428947,-0.477366">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#FFC16804" Offset="0.012987"/>
+                                            <GradientStop Color="#FFFFBA56" Offset="1"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="#FF000000" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Grid Background="{TemplateBinding Property=Background}">
+                        <ContentPresenter ContentSource="Content" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                          TextElement.Foreground="{TemplateBinding Property=Foreground}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="MaxButtonStyle">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.428947,1.4321" EndPoint="0.428947,-0.477366">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#FFC16804" Offset="0.012987"/>
+                                            <GradientStop Color="#FFFFBA56" Offset="1"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="#FF000000" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Grid Background="{TemplateBinding Property=Background}">
+                        <Rectangle Fill="{TemplateBinding Property=Background}" Stroke="{TemplateBinding Property=Foreground}" Width="7" Height="7"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="DefaultButtonStyle">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.482192,1.03488" EndPoint="0.482192,-0.279069">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF000000" Offset="0"/>
+                        <GradientStop Color="#FF4A4847" Offset="0.996289"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=DefaultBorderBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.428947,1.4321" EndPoint="0.428947,-0.477366">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#FFC16804" Offset="0.012987"/>
+                                            <GradientStop Color="#FFFFBA56" Offset="1"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="#FF000000" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Grid>
+                        <Border Background="{TemplateBinding Property=Background}" BorderBrush="{TemplateBinding Property=BorderBrush}"
+                                BorderThickness="1" x:Name="defBGBorder">
+                            <ContentPresenter ContentSource="Content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBox}" x:Key="DefaultTextBoxStyle">
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="CaretBrush" Value="{StaticResource ResourceKey=DefaultBorderBrush}" />
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=DefaultBorderBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Property=Background}" BorderBrush="{TemplateBinding Property=BorderBrush}"
+                                BorderThickness="1">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="2" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type ListBox}" x:Key="DefaultListboxStyle">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=DefaultBorderBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Property=Background}" BorderBrush="{TemplateBinding Property=BorderBrush}"
+                                BorderThickness="1" CornerRadius="3" x:Name="ListBoxBorder">
+                            <ScrollViewer Margin="0" Focusable="False">
+                                <StackPanel Margin="2" IsItemsHost="True" />
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ListBoxItem" x:Key="{x:Type ListBoxItem}">
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ResourceKey=DefaultBorderBrush}" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Grid>
+                        <Border Background="{TemplateBinding Property=Background}" BorderThickness="0">
+                            <TextBlock Text="{TemplateBinding Property=Content}" Foreground="{TemplateBinding Property=Foreground}"
+                                       VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Window}" x:Key="{x:Type Window}">
+        <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=DefaultBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+    </Style>
+</ResourceDictionary>

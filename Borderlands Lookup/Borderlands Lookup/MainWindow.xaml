@@ -1,0 +1,54 @@
+﻿<Window x:Class="Borderlands_Lookup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" 
+        BorderBrush="{DynamicResource ResourceKey=DefaultBorderBrush}" Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\DefaultStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="{DynamicResource ResourceKey=MainBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18" />
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="Black" MouseDown="Grid_MouseDown_1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="15" />
+            </Grid.ColumnDefinitions>
+            <Button Name="btnClose" Grid.Column="3" Content="X" Style="{DynamicResource ResourceKey=CloseButtonStyle}" FontSize="10"
+                    Click="btnClose_Click_1"/>
+            <Button Name="btnMaximize" Grid.Column="2" Style="{DynamicResource ResourceKey=MaxButtonStyle}" Click="btnMaximize_Click_1" />
+            <Button Name="btnMinimize" Grid.Column="1" Style="{DynamicResource ResourceKey=CloseButtonStyle}" Content="-" FontSize="12"
+                    Click="btnMinimize_Click_1"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" Text="Borderlands Lookup"
+                       Foreground="{DynamicResource ResourceKey=DefaultForegroundBrush}" IsHitTestVisible="False" />
+        </Grid>
+        <Grid Grid.Row="1" Style="{DynamicResource ResourceKey=HeaderGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Recent:" VerticalAlignment="Center"  HorizontalAlignment="Center"
+                       Foreground="{DynamicResource ResourceKey=DefaultForegroundBrush}"/>
+            <ComboBox Name="cmbRecent" Width="100" Grid.Column="1" HorizontalAlignment="Center"
+                      VerticalAlignment="Center" />
+            <TextBox Name="txtSearch" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5, 0"
+                     Width="Auto" Height="22" Grid.Column="2" Style="{DynamicResource ResourceKey=DefaultTextBoxStyle}"  />
+            <Button Name="btnSearch" Content="Search" Grid.Column="3" Width="75" Height="22" Click="btnSearch_Click" 
+                    Style="{DynamicResource ResourceKey=DefaultButtonStyle}" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <ListBox Margin="15" Style="{DynamicResource ResourceKey=DefaultListboxStyle}" Name="lstMain" />
+        </Grid>
+    </Grid>
+</Window>
